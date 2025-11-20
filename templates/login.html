@@ -1,0 +1,51 @@
+<!doctype html> 
+
+<html> 
+
+<head> 
+
+  <meta charset="utf-8"> 
+
+  <title>Yönetici Girişi</title> 
+
+</head> 
+
+<body> 
+
+  <h1>Yönetici Girişi</h1> 
+
+  {% with messages = get_flashed_messages(with_categories=true) %} 
+
+    {% if messages %} 
+
+      <ul> 
+
+        {% for category, msg in messages %} 
+
+          <li>{{ msg }}</li> 
+
+        {% endfor %} 
+
+      </ul> 
+
+    {% endif %} 
+
+  {% endwith %} 
+
+ 
+
+  <form method="POST"> 
+
+    <input type="password" name="password" placeholder="Parola" required> 
+
+    <button type="submit">Giriş</button> 
+
+  </form> 
+
+ 
+
+  <p><a href="{{ url_for('index') }}">Geri dön</a></p> 
+
+</body> 
+
+</html> 
